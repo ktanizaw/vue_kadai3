@@ -1,0 +1,37 @@
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="app">
+  <p>
+  名前：<input type="text"
+      placeholder="テスト太郎"
+      v-model="newStudentName">
+  コース：<input type="text"
+      placeholder="Webエンジニアコース"
+      v-model="newStudentCource">
+  受講期：<input type="text"
+      placeholder="2019年01月期"
+      v-model="newStudentPeriod"></p>
+  <button v-on:click="addStudents">入力した生徒を追加する</button>
+
+  <ul>
+    <li v-for="student in students" v-bind:key="student.id">
+        <!-- {{ }} のなかに書いた記述で、Vue.jsのデータの式展開が行える -->
+        ID {{student.id}} /
+        名前 {{student.name}} /
+        コース {{student.cource}} /
+        受講期 {{student.period}}
+    </li>
+  </ul>
+
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
